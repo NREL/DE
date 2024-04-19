@@ -4,6 +4,12 @@
 ### SDM_Extraction
 **Script**: Facilitates the extraction of single diode parameters from IV data, streamlining the analysis process.
 
+### Optimization_example
+**Script**: Exemplifies the application of the DE algorithm to minimize the 2D Ackley function
+
+### ackley_results
+**Script**: Results from minimizing the Ackley function
+
 ### Results_analysis
 **Jupyter Notebook**: Employed for generating figures based on the data collected, aiding in the visualization and interpretation of results.
 

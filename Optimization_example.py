@@ -16,7 +16,7 @@ if __name__ == '__main__':
     ubound = np.array([10,10])
 
     total_time = 0
-    timed_runs = 10
+    timed_runs = 100
     parallel_runs = 10
     for i in range(timed_runs):
         start_time = time.time()

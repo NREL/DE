@@ -14,7 +14,7 @@ def lambertw_newton(z, tol=1e-6, max_iter=10):
     return w  # Return the last approximation if convergence criteria are not met
 
 # Test the function on a range of values and compare with scipy's implementation
-z_values = np.logspace(-10, 6, 100)  # Avoid starting exactly at 0 to prevent log(1) -> 0 initial guess
+z_values = np.logspace(-25, 6, 100)  # Avoid starting exactly at 0 to prevent log(1) -> 0 initial guess
 w_custom = np.array([lambertw_newton(z) for z in z_values])
 w_scipy = lambertw(z_values).real
 
@@ -35,16 +35,17 @@ plt.yscale('log')
 plt.legend(loc='lower right', frameon=False)
 
 plt.subplot(1, 2, 2)
-plt.plot(z_values, errors, label='Absolute Error', color='green')
+plt.plot(z_values, errors, 'o', label='Absolute Error', color='green')
 plt.title('Absolute Error Between Implementations')
 plt.xlabel('z')
 plt.ylabel('Error')
+plt.xscale('log')
 plt.yscale('log')
 plt.legend()
 
 plt.tight_layout()
 plt.show()
-plt.savefig("../LLM/Figures/approximation.png", format="png",dpi=600)
 # Return the maximum error for a quick reference
 max_error = np.max(errors)
 max_error
+print(errors)

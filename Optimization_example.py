@@ -25,8 +25,7 @@ if __name__ == '__main__':
                                                 lower_bound=lbound, upper_bound=ubound)
         end_time = time.time()
         total_time += end_time - start_time
-        execution_time = end_time - start_time
-        average_time = total_time / timed_runs
+        
         with open(f"./Ackley/Ackley_{i}.txt", "w") as text_file:
                 text_file.write("Run Score X Y\n" )
                 for j in range(parallel_runs):
@@ -36,4 +35,5 @@ if __name__ == '__main__':
                                     f"{solution_list[j,0]:.3e} "
                                     f"{solution_list[j,1]:.3e}\n"
                         ))
+    average_time = total_time / timed_runs
     print(f"Average execution time over {timed_runs} runs: {average_time} seconds")

@@ -1,4 +1,6 @@
 Copyright (c) 2024 Alliance for Sustainable Energy, LLC
+NREL software record: SWR-24-59
+
 ## DE (Differential Evolution)
 Numba-compatible self-adaptive differential evolution algorithm for optimization tasks. This implementation is based on the method introduced by Brest, Janez, et al., in their study "Self-adapting control parameters in differential evolution: A comparative study on numerical benchmark problems," published in IEEE Transactions on Evolutionary Computation, Vol. 10, No. 6, 2006, pp. 646-657.
 

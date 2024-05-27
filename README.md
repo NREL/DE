@@ -1,4 +1,5 @@
-Copyright (c) 2024 Alliance for Sustainable Energy, LLC
+Copyright (c) 2024 Alliance for Sustainable Energy, LLC.
+
 NREL software record: SWR-24-59
 
 ## DE (Differential Evolution)

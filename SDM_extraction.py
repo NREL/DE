@@ -65,6 +65,7 @@ def extract_parameters(iv_folder, results_folder, temperature_celsius, lbound, u
                             f"{solution_list[j,3]:.3e} "
                             f"{solution_list[j,4]:.3e}\n"
                         ))
+    print("All IV files processed. Analysis is complete!")
                
 @jit(nopython=True, fastmath=True)
 def lambertw_newton(z, tol=1e-6, max_iter=10):
@@ -98,13 +99,22 @@ def create_objective_function(voltage, current, temperature_celsius): # Whatever
 def extract_multiple_temps(temperature_list, main_folder):
     for temperature_celsius in temperature_list:
         iv_folder = os.path.join(main_folder, str(temperature_celsius)+"C")
-        results_folder = os.path.join(iv_folder,"Results_test")
+        results_folder = os.path.join(iv_folder,"Results")
         lbound = np.array([1e-15,  1,   1e-6, 1e-6, -1]) # lower bound for indv[0], indv[1], ...
         ubound = np.array([1,      10,   1e3,  1e9,   1])  # upper bound for indv[0], indv[1], ...
 
         extract_parameters(iv_folder, results_folder, temperature_celsius,
                         lbound, ubound, 
                         vmin=-10, vmax=5, runs=10, popsize=100, gmax=1e4)  
-    print("Done!")    
 
-extract_multiple_temps(temperature_list = [300,350,400,450,500,550], main_folder="./D2_Temp")
+# Examples:
+    # To extract parameters for multiple temperatures, name folders as "300C", "400C" and so on, and use the extract_multiple_temps function:
+    # extract_multiple_temps(temperature_list = [300,350,400,450,500,550], main_folder="./D2_Temp") 
+
+    # To extract parameters from IV curves in a folder (all measured at the same temperature):
+
+    extract_parameters("./Test", "./Test/Results", 
+                    temperature_celsius=300, 
+                    lbound=np.array([1e-15, 1, 1e-6, 1e-6, -1]), ubound=np.array([1, 10, 1e3, 1e9, 1]), # lower and upper bound for indv[0], indv[1], ...
+                    vmin=-10, vmax=5, 
+                    runs=10, popsize=100, gmax=1)

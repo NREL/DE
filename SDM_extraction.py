@@ -113,7 +113,7 @@ def extract_multiple_temps(temperature_list, main_folder):
 
     # To extract parameters from IV curves in a folder (all measured at the same temperature):
 
-    extract_parameters("./Test", "./Test/Results", 
+extract_parameters("./Test", "./Test/Results", 
                     temperature_celsius=300, 
                     lbound=np.array([1e-15, 1, 1e-6, 1e-6, -1]), ubound=np.array([1, 10, 1e3, 1e9, 1]), # lower and upper bound for indv[0], indv[1], ...
                     vmin=-10, vmax=5, 

@@ -19,3 +19,22 @@ Numba-compatible self-adaptive differential evolution algorithm for optimization
 
 ### LambertW Approximation
 **Method Evaluation**: Evaluates the main branch of the Lambert W function, approximated via the Newton-Raphson method, which is then compared against results from the SciPy implementation.
+
+## 📚 How to Cite
+
+If you use this repository in your research or find it helpful, please cite the following paper:
+
+```bibtex
+@article{febba2025_dd,
+  author    = "Fébba, Davi and Egbo, Kingsley and Callahan, William A. and Zakutayev, Andriy",
+  title     = "From text to test: AI-generated control software for materials science instruments",
+  journal   = "Digital Discovery",
+  year      = "2025",
+  volume    = "4",
+  issue     = "1",
+  pages     = "35-45",
+  publisher = "RSC",
+  doi       = "10.1039/D4DD00143E",
+  url       = "http://dx.doi.org/10.1039/D4DD00143E"
+}
+
